@@ -59,7 +59,7 @@ sber-agents/
 ├── 02-llm-api/ # Работа с OpenAPI
 ├── README.md
 └── requirements.txt
-
+```
 
 > Новые папки появляются по мере прохождения курса.
 
