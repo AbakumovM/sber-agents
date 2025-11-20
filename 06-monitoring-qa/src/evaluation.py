@@ -40,7 +40,7 @@ def init_ragas_metrics():
     logger.info("Initializing RAGAS metrics...")
     
     # Настройка LLM и embeddings для RAGAS (фиксированные модели для единообразной оценки)
-    if config.RAGAS_LLM_MODEL == 'GigaChat-2':
+    if config.RAGAS_LLM_MODEL in ('GigaChat-2', 'GigaChat-2-Pro', 'GigaChat-2-Max'):
         langchain_llm = GigaChat(
             model=config.RAGAS_LLM_MODEL,
             credentials=config.OPENAI_API_KEY,

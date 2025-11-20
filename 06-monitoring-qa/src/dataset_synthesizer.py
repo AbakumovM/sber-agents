@@ -124,7 +124,7 @@ def synthesize_qa_pairs_from_pdf(chunks: List, llm_model: str = "gpt-4o") -> Lis
     """
     if not chunks:
         return []
-    if llm_model == 'GigaChat-2':
+    if llm_model in ('GigaChat-2', 'GigaChat-2-Pro', 'GigaChat-2-Max'):
         llm = GigaChat(
             model=llm_model, 
             credentials=config.OPENAI_API_KEY, 

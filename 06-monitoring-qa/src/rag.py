@@ -122,7 +122,7 @@ def _get_llm_query_transform():
     """Ленивая инициализация LLM для query transformation с кешированием"""
     global _llm_query_transform
     if _llm_query_transform is None:
-        if config.MODEL_QUERY_TRANSFORM == 'GigaChat-2':
+        if config.MODEL_QUERY_TRANSFORM in ('GigaChat-2', 'GigaChat-2-Pro', 'GigaChat-2-Max'):
             _llm_query_transform = GigaChat(
                 model=config.MODEL_QUERY_TRANSFORM,
                 credentials=config.OPENAI_API_KEY,
@@ -143,7 +143,7 @@ def _get_llm():
     """Ленивая инициализация основной LLM с кешированием"""
     global _llm
     if _llm is None:
-        if config.MODEL == 'GigaChat-2':
+        if config.MODEL in ('GigaChat-2', 'GigaChat-2-Pro', 'GigaChat-2-Max'):
             _llm = GigaChat(
                 model=config.MODEL, 
                 credentials=config.OPENAI_API_KEY,
